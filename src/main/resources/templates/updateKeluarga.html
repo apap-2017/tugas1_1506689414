@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  
+  <head>
+     <title>TAMBAH KELUARGA</title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+  	 	<!-- <div th:replace="fragments/fragment :: header"></div> -->  
+    
+    <h1>Form Tambah Keluarga</h1>
+  
+  	<div class="wrapper">
+  		<form  class="ccform" action="/keluarga/ubah/submit" th:action="${keluarga}" th:object="${keluargaModel}" method="POST">
+  			<labeL class="col-sm-2 control-label">Alamat</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="alamat" th:value="*{alamat}" th:field="*{alamat}" />
+  					<!-- 	<label th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}"></label> -->
+  				</div>
+  			
+  			<labeL class="col-sm-2 control-label">RT</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="RT" th:value="*{RT}" th:field="*{RT}" />
+  					<!-- <label th:if="${#fields.hasErrors('RT')}" th:errors="*{RT}"></label>  -->
+  				</div>
+  				
+  			<labeL class="col-sm-2 control-label">RW</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="RW" th:value="*{RW}" th:field="*{RW}"  />
+   					<!--  <label th:if="${#fields.hasErrors('RW')}" th:errors="*{RW}"></label> -->
+  				</div>
+  		
+  				
+  			<labeL class="col-sm-2 control-label">Kelurahan/Desa</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="nama_kelurahan" th:field="*{kelurahan.nama_kelurahan}" />
+  				
+  				</div>
+  				
+  			<labeL class="col-sm-2 control-label">Kecamatan</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="nama_kecamatan" th:field="*{kelurahan.kecamatan.nama_kecamatan}"  />
+  			
+  				</div>
+  		
+  		  		
+  			<labeL class="col-sm-2 control-label">Kota</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="nama_kota" th:field="*{kelurahan.kecamatan.kota.nama_kota}" />	
+  				
+  				</div>
+  			
+  		 		
+  			<button  type="submit" name="action" value="save">SUBMIT</button>
+  			
+  			
+		</form>
+	</div>	
+         
+    
+    
+    
+    
+  </body>
+</html>
+

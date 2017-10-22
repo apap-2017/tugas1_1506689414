@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Penduduk by NIK</title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+     	<!-- <div th:replace="fragments/fragment :: header"></div> -->  
+     	
+      	<h2 th:text= "'Lihat Data Penduduk - ' + ${penduduk.nik}">Lihat Data Penduduk</h2>	
+      	
+    <form action="/penduduk/view" th:object="${penduduk}" method="GET">
+      	<h3 th:text="'NIK= ' + ${penduduk.nik}">NIK</h3>  
+      	<h3 th:text="'Nama= ' + ${penduduk.nama}">Nama</h3>  
+		<h3 th:text="'Tempat/Tanggal Lahir=  '  +${penduduk.tempat_lahir} + ', '+${penduduk.tanggal_lahir}">Tempat/Tanggal Lahir</h3>  
+		<h3 th:text="'Alamat= ' + ${penduduk.keluarga.alamat} ">Alamat</h3>  
+		<h3 th:text="'RT/RW= ' +${penduduk.keluarga.RT} + '/' + ${penduduk.keluarga.RW} ">RT/RW</h3>  
+		<h3 th:text="'Kelurahan/Desa= ' + ${penduduk.keluarga.kelurahan.nama_kelurahan}">Nama Kelurahan</h3>  
+		<h3 th:text="'Kecamatan= ' + ${penduduk.keluarga.kelurahan.kecamatan.nama_kecamatan}">Nama Kecamatan</h3>  
+		<h3 th:text="'Kota= '+ ${penduduk.keluarga.kelurahan.kecamatan.kota.nama_kota}">Nama Kota</h3>  
+		<h3 th:text="'Golongan Darah= '+ ${penduduk.golongan_darah}">Golongan Darah</h3>  
+		<h3 th:text="'Agama= '+ ${penduduk.agama}">Agama</h3>  
+		<h3 th:text="'Status Perkawinan= '+${penduduk.status_perkawinan}" >Status Perkawinan</h3>
+	
+		<h3 th:text="'Pekerjaan= '+ ${penduduk.pekerjaan}">Pekerjaan</h3>  
+		<h3 th:text="'Kewarganegaraan= '+ ${penduduk.is_wni}">Kewarganegaraan</h3>  
+		<h3 th:text="'Status Kematian= '+ ${penduduk.is_wafat}">Status Kematian</h3>  
+   	</form>
+      	
+         
+    </body>
+</html>
+

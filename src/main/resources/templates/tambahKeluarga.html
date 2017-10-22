@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  
+  <head>
+     <title>TAMBAH KELUARGA</title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+  	 	<!-- <div th:replace="fragments/fragment :: header"></div> -->  
+    
+    <h1>Form Tambah Keluarga</h1>
+  
+  	<div class="wrapper">
+  		<form  class="ccform" action="#" th:action="@{/keluarga/tambah}" th:object="${keluargaModel}" method="POST">
+  			<labeL class="col-sm-2 control-label">Alamat</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="alamat"  />
+  					<!-- 	<label th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}"></label> -->
+  				</div>
+  			
+  			<labeL class="col-sm-2 control-label">RT</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="RT"  />
+  					<!-- <label th:if="${#fields.hasErrors('RT')}" th:errors="*{RT}"></label>  -->
+  				</div>
+  				
+  			<labeL class="col-sm-2 control-label">RW</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="RW"  />
+   					<!--  <label th:if="${#fields.hasErrors('RW')}" th:errors="*{RW}"></label> -->
+  				</div>
+  		
+  				
+  			<labeL class="col-sm-2 control-label">Kelurahan/Desa</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="nama_kelurahan"  />
+  					<!--  <label th:if="${#fields.hasErrors('nama_kelurahan')}" th:errors="*{nama_kelurahan}"></label> -->
+  				</div>
+  				
+  			<labeL class="col-sm-2 control-label">Kecamatan</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="nama_kecamatan"  />
+  					<!-- 	<label th:if="${#fields.hasErrors('nama_kecamatan')}" th:errors="*{nama_kecamatan}"></label> -->
+  				</div>
+  				
+  			<labeL class="col-sm-2 control-label">Kota</labeL>
+  				<div class="col-sm-10">	
+  					<input type="text" name="nama_kota"  />	
+  					<!-- <label th:if="${#fields.hasErrors('nama_kota')}" th:errors="*{nama_kota}"></label> -->
+  				</div>
+  				
+  			<button  type="submit" name="action" value="save">SUBMIT</button>
+  			
+  			
+		</form>
+	</div>	
+         
+    
+    
+    
+    
+  </body>
+</html>
+
